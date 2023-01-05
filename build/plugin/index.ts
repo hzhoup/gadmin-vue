@@ -4,9 +4,10 @@ import jsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
 import { ImportMetaEnv } from '../../types/env'
 import { configHtmlPlugin } from './html'
+import { configCompressPlugin } from './compression'
 
 export const createVitePlugin = (env: ImportMetaEnv, isBuild: boolean) => {
-  const { VITE_LEGACY } = env
+  const { VITE_LEGACY, VITE_BUILD_COMPRESSION, VITE_COMPRESSION_DELETE_ORIGIN_FILE } = env
 
   const plugins: (PluginOption | PluginOption[])[] = [vue(), jsx()]
 
@@ -18,6 +19,10 @@ export const createVitePlugin = (env: ImportMetaEnv, isBuild: boolean) => {
     )
 
   plugins.push(configHtmlPlugin(env, isBuild))
+
+  if (isBuild) {
+    plugins.push(configCompressPlugin(VITE_BUILD_COMPRESSION, VITE_COMPRESSION_DELETE_ORIGIN_FILE))
+  }
 
   return plugins
 }
