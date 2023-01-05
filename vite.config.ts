@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig, loadEnv } from 'vite'
 import { parseEnv } from './build/parseEnv'
 import { createVitePlugin } from './build/plugin'
@@ -11,6 +12,13 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     envPrefix: ['VITE_', 'APP_'],
-    plugins: createVitePlugin(env, isBuild)
+    plugins: createVitePlugin(env, isBuild),
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      transformMode: {
+        web: [/.[tj]sx$/]
+      }
+    }
   }
 })
