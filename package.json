@@ -9,7 +9,8 @@
     "dev:prod": "vite --mode production",
     "build": "vue-tsc && vite build",
     "build:test": "vue-tsc && vite build --mode test",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:dev": "vitest",
     "coverage": "vitest run --coverage",
     "preview": "vite preview",
     "prepare": "husky install"
