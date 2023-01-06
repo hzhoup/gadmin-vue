@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import { parseEnv } from './build/parseEnv'
 import { createVitePlugin } from './build/plugin'
+import { createProxy } from './build/proxy'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -17,6 +18,12 @@ export default defineConfig(({ command, mode }) => {
       alias: {
         '@': resolve(__dirname, 'src')
       }
+    },
+    server: {
+      host: true,
+      port: env.VITE_PORT,
+      cors: true,
+      proxy: createProxy(env.VITE_PROXY)
     },
     test: {
       globals: true,
