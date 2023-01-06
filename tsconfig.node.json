@@ -4,11 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "types": ["vitest/globals", "vitest/importMeta"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "types": ["vitest/globals", "vitest/importMeta"]
   },
   "include": ["vite.config.ts", "build/**/*.ts", "tests/**/*.ts"]
 }

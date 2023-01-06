@@ -33,6 +33,18 @@ export default defineConfig(({ command, mode }) => {
 
   if (isBuild) {
     config.define['import.meta.vitest'] = 'undefined'
+
+    config.build = {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes(resolve(__dirname, 'src/store/index.ts'))) {
+              return 'vendor'
+            }
+          }
+        }
+      }
+    }
   }
 
   return config

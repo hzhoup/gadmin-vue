@@ -8,7 +8,7 @@ export const configUnplugins = () => {
 
   plugins.push(
     autoImport({
-      imports: ['vue', { 'naive-ui': ['useMessage'] }],
+      imports: ['vue', 'pinia', { 'naive-ui': ['useMessage'] }],
       eslintrc: {
         enabled: true,
         filepath: 'types/.eslintrc-auto-import.json',
