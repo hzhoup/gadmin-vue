@@ -35,6 +35,12 @@ export default defineConfig(({ command, mode }) => {
     config.define['import.meta.vitest'] = 'undefined'
 
     config.build = {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
       rollupOptions: {
         output: {
           manualChunks(id) {
