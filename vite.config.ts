@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import { resolve } from 'path'
 import { defineConfig, loadEnv, UserConfig } from 'vite'
 import { parseEnv } from './build/parseEnv'
 import { createVitePlugin } from './build/plugin'
@@ -12,6 +13,11 @@ export default defineConfig(({ command, mode }) => {
   const config: UserConfig = {
     envPrefix: ['VITE_', 'APP_'],
     plugins: createVitePlugin(env, isBuild),
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src')
+      }
+    },
     test: {
       globals: true,
       environment: 'jsdom',
