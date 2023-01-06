@@ -5,6 +5,7 @@ import legacy from '@vitejs/plugin-legacy'
 import { ImportMetaEnv } from '../../types/env'
 import { configHtmlPlugin } from './html'
 import { configCompressPlugin } from './compression'
+import { configUnplugins } from './unplugins'
 
 export const createVitePlugin = (env: ImportMetaEnv, isBuild: boolean) => {
   const { VITE_LEGACY, VITE_BUILD_COMPRESSION, VITE_COMPRESSION_DELETE_ORIGIN_FILE } = env
@@ -19,6 +20,8 @@ export const createVitePlugin = (env: ImportMetaEnv, isBuild: boolean) => {
     )
 
   plugins.push(configHtmlPlugin(env, isBuild))
+
+  plugins.push(configUnplugins())
 
   if (isBuild) {
     plugins.push(configCompressPlugin(VITE_BUILD_COMPRESSION, VITE_COMPRESSION_DELETE_ORIGIN_FILE))

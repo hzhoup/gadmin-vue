@@ -21,6 +21,7 @@
     "*.{vue,js,ts,jsx,tsx}": "eslint --fix"
   },
   "dependencies": {
+    "naive-ui": "^2.34.3",
     "vue": "^3.2.45"
   },
   "devDependencies": {
@@ -48,6 +49,8 @@
     "prettier": "^2.8.1",
     "terser": "^5.16.1",
     "typescript": "^4.9.3",
+    "unplugin-auto-import": "^0.12.1",
+    "unplugin-vue-components": "^0.22.12",
     "vite": "^4.0.0",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.0",
