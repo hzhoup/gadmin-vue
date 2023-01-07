@@ -1,5 +1,5 @@
 <template>
-  <div>login</div>
+  <div>{{ $t('login.btn') }}</div>
 </template>
 
 <script setup lang="ts"></script>

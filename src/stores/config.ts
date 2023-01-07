@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { pinia } from '@/stores'
 
 /**
  * @description app config 配置，持久化存储到 localStorage 中
@@ -6,7 +7,9 @@ import { defineStore } from 'pinia'
 export const useConfig = defineStore(
   'config',
   () => {
-    const config = reactive({})
+    const config = reactive({
+      locale: 'zh'
+    })
 
     return { ...toRefs(config) }
   },
@@ -17,3 +20,7 @@ export const useConfig = defineStore(
     }
   }
 )
+
+export const useConfigWithOut = () => {
+  return useConfig(pinia)
+}

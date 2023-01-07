@@ -16,6 +16,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: createVitePlugin(env, isBuild),
     resolve: {
       alias: {
+        'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
         '@': resolve(__dirname, 'src')
       }
     },
@@ -24,6 +25,9 @@ export default defineConfig(({ command, mode }) => {
       port: env.VITE_PORT,
       cors: true,
       proxy: createProxy(env.VITE_PROXY)
+    },
+    define: {
+      __INTLIFY_PROD_DEVTOOLS__: false
     },
     test: {
       globals: true,

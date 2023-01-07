@@ -1,5 +1,6 @@
 export interface ImportMetaEnv {
   readonly APP_NAME: string
+  readonly APP_FALL_BACK_LOCALE: string
 
   readonly VITE_PORT: number
   readonly VITE_PROXY: Array<ProxyList>

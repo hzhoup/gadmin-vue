@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended",
-    "types/.eslintrc-auto-import.json"
+    "./types/.eslintrc-auto-import.json"
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {
@@ -24,5 +24,12 @@
     "ecmaVersion": "latest"
   },
   "plugins": ["@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        "ignores": ["Login"]
+      }
+    ]
+  }
 }
