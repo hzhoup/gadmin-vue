@@ -1,15 +1,20 @@
 import App from './App.vue'
-import { pinia, registerStore } from '@/stores'
-import router from '@/routes'
-import i18n from '@/locals'
+import { setupStore } from '@/stores'
+import { setupRouter } from '@/routes'
+import { setupI18n } from '@/locals'
 
 import 'uno.css'
 
-const app = createApp(App)
+const bootstrap = async () => {
+  const app = createApp(App)
 
-app.use(pinia)
-registerStore()
+  setupStore(app)
 
-app.use(router).use(i18n)
+  await setupI18n(app)
 
-app.mount('#app')
+  setupRouter(app)
+
+  app.mount('#app')
+}
+
+bootstrap()

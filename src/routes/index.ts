@@ -1,3 +1,4 @@
+import { App } from 'vue'
 import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
 import { LoginPage } from './constant'
 
@@ -14,5 +15,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+export const setupRouter = (app: App) => {
+  app.use(router)
+}
 
 export default router

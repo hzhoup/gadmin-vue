@@ -1,5 +1,6 @@
 import { useConfig } from './config'
 import piniaPersistedstate from 'pinia-plugin-persistedstate'
+import { App } from 'vue'
 
 export interface AppStore {
   useConfig: ReturnType<typeof useConfig>
@@ -12,5 +13,10 @@ export const registerStore = () => {
 }
 
 export const pinia = createPinia().use(piniaPersistedstate)
+
+export const setupStore = (app: App) => {
+  app.use(pinia)
+  registerStore()
+}
 
 export default appStore
