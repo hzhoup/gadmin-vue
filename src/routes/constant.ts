@@ -1,11 +1,3 @@
-import { RouteRecordRaw } from 'vue-router'
+export const BASIC_LAYOUT = () => import('@/layouts/BasicLayout.vue')
 
-export const LoginPage: RouteRecordRaw = {
-  path: '/login',
-  name: 'Login',
-  component: () => import('@/views/Login.vue'),
-  meta: {
-    title: '登录',
-    requireAuth: false
-  }
-}
+export const EXCEPTION_PAGE = () => import('@/views/sys/Exception.vue')

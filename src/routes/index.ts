@@ -1,23 +1,14 @@
 import { App } from 'vue'
-import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
-import { LoginPage } from './constant'
+import { createRouter, createWebHistory } from 'vue-router'
+import { basicRoutes } from './basic'
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/Workbench.vue')
-  },
-  LoginPage
-]
-
-const router = createRouter({
+export const router = createRouter({
+  routes: basicRoutes,
   history: createWebHistory(),
-  routes
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 })
 })
 
 export const setupRouter = (app: App) => {
   app.use(router)
 }
-
-export default router

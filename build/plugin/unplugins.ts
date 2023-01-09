@@ -8,7 +8,7 @@ export const configUnplugins = () => {
 
   plugins.push(
     autoImport({
-      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', { 'naive-ui': ['useMessage'] }],
+      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', { 'naive-ui': ['useMessage', 'useOsTheme'] }],
       eslintrc: {
         enabled: false,
         filepath: 'types/.eslintrc-auto-import.json',

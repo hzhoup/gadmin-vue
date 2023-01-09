@@ -1,7 +1,7 @@
 import { createI18n, I18nOptions } from 'vue-i18n'
 import { useConfigWithOut } from '@/stores/config'
 import { setHtmlLang, setupLangs } from './helper'
-import { App } from 'vue'
+import type { App } from 'vue'
 
 const createI18nOptions = async (): Promise<I18nOptions> => {
   const { locale } = useConfigWithOut()

@@ -64,6 +64,7 @@
     "useI18n": true,
     "useLink": true,
     "useMessage": true,
+    "useOsTheme": true,
     "useRoute": true,
     "useRouter": true,
     "useSlots": true,
