@@ -10,9 +10,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import LayoutHeader from './header/index.vue'
-import LayoutSide from './side/index.vue'
-import LayoutContent from './content/index.vue'
+import LayoutHeader from './Header/index.vue'
+import LayoutSide from './Side/index.vue'
+import LayoutContent from './Content/index.vue'
 
 export default defineComponent({
   name: 'BasicLayout',
