@@ -5,6 +5,7 @@ import { defineStore } from 'pinia'
 interface ConfigState {
   locale: 'zh' | 'en'
   theme: 'dark' | 'light' | null
+  deviceType: 'pc' | 'pad' | 'mobile'
 }
 
 /**
@@ -15,7 +16,8 @@ export const useConfig = defineStore(
   () => {
     const config = reactive<ConfigState>({
       locale: 'zh',
-      theme: null
+      theme: null,
+      deviceType: 'pc'
     })
 
     const initThemForOs = () => {
@@ -26,7 +28,11 @@ export const useConfig = defineStore(
       return config.theme === 'dark' ? darkTheme : null
     })
 
-    return { ...toRefs(config), initThemForOs, naiveTheme }
+    const changeDeviceType = (type: 'pc' | 'pad' | 'mobile') => {
+      config.deviceType = type
+    }
+
+    return { ...toRefs(config), initThemForOs, changeDeviceType, naiveTheme }
   },
   {
     persist: {

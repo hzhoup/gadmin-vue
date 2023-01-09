@@ -5,7 +5,17 @@
     :locale="getNaiveLocale()"
     :date-locale="getNaiveDateLocale()"
   >
-    <RouterView />
+    <n-notification-provider>
+      <n-message-provider>
+        <n-loading-bar-provider>
+          <n-dialog-provider>
+            <n-el class="h-screen w-screen">
+              <router-view />
+            </n-el>
+          </n-dialog-provider>
+        </n-loading-bar-provider>
+      </n-message-provider>
+    </n-notification-provider>
     <n-global-style />
   </n-config-provider>
 </template>

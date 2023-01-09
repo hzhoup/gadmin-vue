@@ -9,12 +9,17 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDialogProvider: typeof import('naive-ui')['NDialogProvider']
+    NEl: typeof import('naive-ui')['NEl']
     NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
+    NLoadingBarProvider: typeof import('naive-ui')['NLoadingBarProvider']
+    NMessageProvider: typeof import('naive-ui')['NMessageProvider']
+    NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
