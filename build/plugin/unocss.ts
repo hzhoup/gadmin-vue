@@ -6,7 +6,9 @@ export const configUnoCssPlugin = () => {
   const unoCssPlugin: PluginOption[] = unoCss({
     presets: [presetIcons(), presetAttributify(), presetUno()],
     rules: [],
-    shortcuts: {}
+    shortcuts: {
+      'wh-full': 'w-full h-full'
+    }
   })
 
   return unoCssPlugin

@@ -1,5 +1,5 @@
 <template>
-  <n-layout has-sider class="h-full w-full">
+  <n-layout has-sider wh-full>
     <LayoutSide />
     <n-layout>
       <LayoutHeader />

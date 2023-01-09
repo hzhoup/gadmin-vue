@@ -9,7 +9,7 @@
       <n-message-provider>
         <n-loading-bar-provider>
           <n-dialog-provider>
-            <n-el class="h-screen w-screen">
+            <n-el h-screen w-screen>
               <router-view />
             </n-el>
           </n-dialog-provider>
