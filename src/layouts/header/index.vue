@@ -1,5 +1,7 @@
 <template>
-  <n-layout-header bordered class="h-16">header</n-layout-header>
+  <n-layout-header h-16 p-4 flex-center-between bordered>
+    <a i-mdi-refresh icon-base />
+  </n-layout-header>
 </template>
 
 <script lang="ts">

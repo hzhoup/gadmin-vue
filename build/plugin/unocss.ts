@@ -7,7 +7,9 @@ export const configUnoCssPlugin = () => {
     presets: [presetIcons(), presetAttributify(), presetUno()],
     rules: [],
     shortcuts: {
-      'wh-full': 'w-full h-full'
+      'wh-full': 'w-full h-full',
+      'flex-center-between': 'flex items-center justify-between',
+      'icon-base': 'text-xl cursor-pointer'
     }
   })
 
