@@ -12,7 +12,7 @@ const bootstrap = async () => {
 
   await setupI18n(app)
 
-  setupRouter(app)
+  await setupRouter(app)
 
   app.mount('#app')
 }

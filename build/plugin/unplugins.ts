@@ -1,18 +1,24 @@
-import { PluginOption } from 'vite'
 import autoImport from 'unplugin-auto-import/vite'
-import components from 'unplugin-vue-components/vite'
-import icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import icons from 'unplugin-icons/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import components from 'unplugin-vue-components/vite'
+import { PluginOption } from 'vite'
 
 export const configUnplugins = () => {
   const plugins: PluginOption[] = []
 
   plugins.push(
     autoImport({
-      imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', { 'naive-ui': ['useMessage', 'useOsTheme'] }],
+      imports: [
+        'vue',
+        'pinia',
+        'vue-router',
+        'vue-i18n',
+        { 'naive-ui': ['createDiscreteApi', 'useMessage', 'useLoadingBar', 'useOsTheme'] }
+      ],
       eslintrc: {
-        enabled: false,
+        enabled: true,
         filepath: 'types/.eslintrc-auto-import.json',
         globalsPropValue: true
       },

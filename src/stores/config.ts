@@ -1,10 +1,10 @@
 import { pinia } from '@/stores'
-import { darkTheme } from 'naive-ui'
+import { ConfigProviderProps, darkTheme, lightTheme } from 'naive-ui'
 import { defineStore } from 'pinia'
 
 interface ConfigState {
   locale: 'zh' | 'en'
-  theme: 'dark' | 'light' | null
+  theme: 'dark' | 'light' | null | undefined
   deviceType: 'pc' | 'pad' | 'mobile'
 }
 
@@ -25,14 +25,35 @@ export const useConfig = defineStore(
     }
 
     const naiveTheme = computed(() => {
-      return config.theme === 'dark' ? darkTheme : null
+      return config.theme === 'dark' ? darkTheme : lightTheme
     })
 
     const changeDeviceType = (type: 'pc' | 'pad' | 'mobile') => {
       config.deviceType = type
     }
 
-    return { ...toRefs(config), initThemForOs, changeDeviceType, naiveTheme }
+    const configProviderPropsRef = computed<ConfigProviderProps>(() => ({
+      theme: config.theme === 'light' ? lightTheme : darkTheme
+    }))
+    const { loadingBar, message, notification, dialog } = createDiscreteApi(
+      ['loadingBar', 'message', 'notification', 'dialog'],
+      {
+        configProviderProps: configProviderPropsRef
+      }
+    )
+
+    return {
+      ...toRefs(config),
+      initThemForOs,
+      changeDeviceType,
+
+      loadingBar,
+      message,
+      notification,
+      dialog,
+
+      naiveTheme
+    }
   },
   {
     persist: {
