@@ -8,8 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
+    IIcRoundDarkMode: typeof import('~icons/ic/round-dark-mode')['default']
     IIcRoundFullscreen: typeof import('~icons/ic/round-fullscreen')['default']
     IIcRoundFullscreenExit: typeof import('~icons/ic/round-fullscreen-exit')['default']
+    IIcRoundLightMode: typeof import('~icons/ic/round-light-mode')['default']
     IIcRoundRefresh: typeof import('~icons/ic/round-refresh')['default']
     IIcRoundTranslate: typeof import('~icons/ic/round-translate')['default']
     IMdiArrowCollapseAll: typeof import('~icons/mdi/arrow-collapse-all')['default']

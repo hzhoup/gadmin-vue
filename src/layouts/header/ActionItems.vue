@@ -12,6 +12,10 @@
         <IIcRoundTranslate />
       </n-icon>
     </n-dropdown>
+    <n-icon hover:cursor-pointer :size="24" @click="appStore.useConfig.changeTheme">
+      <IIcRoundLightMode v-if="theme === 'dark'" />
+      <IIcRoundDarkMode v-else />
+    </n-icon>
   </n-space>
 </template>
 
@@ -26,6 +30,8 @@ const { isFullscreen, toggle } = useFullscreen()
 
 const { locale } = useI18n()
 const { options } = useLocale()
+
+const { theme } = storeToRefs(appStore.useConfig)
 
 const refresh = () => {
   router.replace({ path: '/redirect' + route.path })

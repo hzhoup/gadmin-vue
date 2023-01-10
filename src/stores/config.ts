@@ -25,6 +25,10 @@ export const useConfig = defineStore(
       config.locale = key
     }
 
+    const changeTheme = () => {
+      config.theme = config.theme === 'dark' ? 'light' : 'dark'
+    }
+
     const initThemForOs = () => {
       config.theme = useOsTheme().value
     }
@@ -50,6 +54,7 @@ export const useConfig = defineStore(
     return {
       ...toRefs(config),
       changeLocale,
+      changeTheme,
       initThemForOs,
       changeDeviceType,
 
