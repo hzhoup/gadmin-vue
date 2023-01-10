@@ -62,6 +62,7 @@
     "useAttrs": true,
     "useCssModule": true,
     "useCssVars": true,
+    "useFullscreen": true,
     "useI18n": true,
     "useLink": true,
     "useLoadingBar": true,

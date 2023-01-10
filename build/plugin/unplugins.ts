@@ -15,7 +15,10 @@ export const configUnplugins = () => {
         'pinia',
         'vue-router',
         'vue-i18n',
-        { 'naive-ui': ['createDiscreteApi', 'useMessage', 'useLoadingBar', 'useOsTheme'] }
+        { 'naive-ui': ['createDiscreteApi', 'useMessage', 'useLoadingBar', 'useOsTheme'] },
+        {
+          '@vueuse/core': ['useFullscreen']
+        }
       ],
       eslintrc: {
         enabled: true,

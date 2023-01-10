@@ -8,6 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
+    IMdiArrowCollapseAll: typeof import('~icons/mdi/arrow-collapse-all')['default']
+    IMdiArrowExpandAll: typeof import('~icons/mdi/arrow-expand-all')['default']
+    IMdiFullscreen: typeof import('~icons/mdi/fullscreen')['default']
+    IMdiFullscreenExit: typeof import('~icons/mdi/fullscreen-exit')['default']
     IMdiRefresh: typeof import('~icons/mdi/refresh')['default']
     IMidRefresh: typeof import('~icons/mi/d-refresh')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
