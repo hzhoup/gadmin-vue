@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import { BASIC_LAYOUT, EXCEPTION_PAGE } from './constant'
+import { BASIC_LAYOUT, EXCEPTION_PAGE, REDIRECT_PAGE } from './constant'
 
 export const RootRoute: RouteRecordRaw = {
   path: '/',
@@ -18,6 +18,18 @@ export const LoginPage: RouteRecordRaw = {
   }
 }
 
+export const RedirectPage: RouteRecordRaw = {
+  path: '/redirect',
+  component: BASIC_LAYOUT,
+  meta: {},
+  children: [
+    {
+      path: '/redirect/:path(.*)*',
+      component: REDIRECT_PAGE
+    }
+  ]
+}
+
 export const PageNotFound: RouteRecordRaw = {
   path: '/:path(.*)*',
   name: '404',
@@ -33,4 +45,4 @@ export const PageNotFound: RouteRecordRaw = {
   ]
 }
 
-export const basicRoutes: RouteRecordRaw[] = [LoginPage, PageNotFound]
+export const basicRoutes: RouteRecordRaw[] = [LoginPage, RedirectPage, PageNotFound]

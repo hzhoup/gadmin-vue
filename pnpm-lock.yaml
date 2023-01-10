@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': ^17.4.0
   '@commitlint/config-conventional': ^17.4.0
   '@iconify-json/mdi': ^1.1.41
+  '@iconify-json/mi': ^1.1.3
   '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.48.0
   '@typescript-eslint/parser': ^5.48.0
@@ -68,6 +69,7 @@ devDependencies:
   '@commitlint/cli': 17.4.0_@types+node@18.11.18
   '@commitlint/config-conventional': 17.4.0
   '@iconify-json/mdi': 1.1.41
+  '@iconify-json/mi': 1.1.3
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.0_k73wpmdolxikpyqun3p36akaaq
   '@typescript-eslint/parser': 5.48.0_iukboom6ndih5an6iafl45j2fe
@@ -882,6 +884,12 @@ packages:
 
   /@iconify-json/mdi/1.1.41:
     resolution: {integrity: sha512-nMT3k6cH48qi66m2mYDOh4YPW3BgSD+VLNXP7Z3LHNgKoGVLpA76AKWzYGshhyprebBGNXAk+72mlLLQSIojzQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/mi/1.1.3:
+    resolution: {integrity: sha512-Po9IqrNtVvoxX9GKkWqOaXB9Tq/1Z9gOYOt6YpWPzkydNoSsneFiaAB5i7x6NOAgQFsSAEHH23N6uXSgNdD4Rw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
