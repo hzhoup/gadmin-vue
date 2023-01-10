@@ -2,8 +2,8 @@
   <n-config-provider
     :theme="naiveTheme"
     :theme-overrides="naiveTheme === null ? lightThemeOverrides : darkThemeOverrides"
-    :locale="getNaiveLocale()"
-    :date-locale="getNaiveDateLocale()"
+    :locale="getNaiveLocale"
+    :date-locale="getNaiveDateLocale"
   >
     <n-notification-provider>
       <n-message-provider>

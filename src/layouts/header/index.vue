@@ -1,6 +1,6 @@
 <template>
   <n-layout-header h-16 p-4 flex-center-between bordered>
-    <a i-mdi-refresh icon-base />
+    <a>1</a>
     <ActionItems />
   </n-layout-header>
 </template>

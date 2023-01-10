@@ -8,6 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
+    IIcRoundFullscreen: typeof import('~icons/ic/round-fullscreen')['default']
+    IIcRoundFullscreenExit: typeof import('~icons/ic/round-fullscreen-exit')['default']
+    IIcRoundRefresh: typeof import('~icons/ic/round-refresh')['default']
+    IIcRoundTranslate: typeof import('~icons/ic/round-translate')['default']
     IMdiArrowCollapseAll: typeof import('~icons/mdi/arrow-collapse-all')['default']
     IMdiArrowExpandAll: typeof import('~icons/mdi/arrow-expand-all')['default']
     IMdiFullscreen: typeof import('~icons/mdi/fullscreen')['default']
@@ -16,6 +20,7 @@ declare module '@vue/runtime-core' {
     IMidRefresh: typeof import('~icons/mi/d-refresh')['default']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
+    NDropdown: typeof import('naive-ui')['NDropdown']
     NEl: typeof import('naive-ui')['NEl']
     NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
     NIcon: typeof import('naive-ui')['NIcon']

@@ -1,9 +1,10 @@
+import { LocaleKey } from '@/locals/useLocale'
 import { pinia } from '@/stores'
 import { ConfigProviderProps, darkTheme, lightTheme } from 'naive-ui'
 import { defineStore } from 'pinia'
 
 interface ConfigState {
-  locale: 'zh' | 'en'
+  locale: LocaleKey
   theme: 'dark' | 'light' | null | undefined
   deviceType: 'pc' | 'pad' | 'mobile'
 }
@@ -19,6 +20,10 @@ export const useConfig = defineStore(
       theme: null,
       deviceType: 'pc'
     })
+
+    const changeLocale = (key: LocaleKey) => {
+      config.locale = key
+    }
 
     const initThemForOs = () => {
       config.theme = useOsTheme().value
@@ -44,6 +49,7 @@ export const useConfig = defineStore(
 
     return {
       ...toRefs(config),
+      changeLocale,
       initThemForOs,
       changeDeviceType,
 
